@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
+            /* Paleta Desert Cyber-Western */
             --deep-rust: #8b3a2b; /* Rojo óxido profundo */
-            --desert-sand: #d2b48c; /* Café arena */
+            --desert-sand: #d2b48c; /* Café arena (claro, para fondo legible) */
+            --alien-neon: #00ff41; /* Verde neón alien (para acentos) */
             --dark-earth: #1a0f0a; /* Fondo casi negro/marrón */
             --leather: #3e2723; /* Marrón cuero */
+            --white-sand: #f4e1d2; /* Un café arena aún más claro para el fondo de texto */
         }
 
         body {
             margin: 0;
-            background-color: var(--dark-earth);
-            /* Textura de sutil arena de fondo */
-            background-image: url('https://www.transparenttextures.com/patterns/dark-dotted-2.png');
-            color: var(--desert-sand);
+            background-color: var(--white-sand); /* Fondo plano claro y legible */
+            color: var(--dark-earth);
             font-family: 'Courier New', Courier, monospace; /* Tipografía tipo máquina de escribir */
             text-align: center;
         }
@@ -39,7 +40,7 @@
         }
 
         h1 { 
-            font-size: 3rem; 
+            font-size: 3.5rem; 
             margin: 0; 
             color: var(--desert-sand);
             text-shadow: 2px 2px 0 var(--dark-earth), 0 0 15px rgba(210,180,140,0.5);
@@ -47,10 +48,10 @@
             letter-spacing: 3px;
         }
 
-        .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 10px; color: var(--deep-rust); font-weight: bold; letter-spacing: 1px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; color: var(--deep-rust); font-weight: bold; letter-spacing: 1px; }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: -60px auto 40px;
             padding: 0 20px;
             position: relative;
@@ -58,12 +59,11 @@
         }
 
         .western-card {
-            background-color: var(--leather);
-            background-image: url('https://www.transparenttextures.com/patterns/leather.png'); /* Textura de cuero */
+            background-color: white; /* Fondo blanco puro para máxima legibilidad */
             border: 3px solid var(--deep-rust);
             border-radius: 10px;
             padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
         h2 { 
@@ -72,7 +72,7 @@
             letter-spacing: 2px;
             display: inline-block;
             margin-bottom: 30px;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
         }
 
         /* Sección de Redes Sociales */
@@ -84,20 +84,19 @@
         }
 
         .social-item {
-            background: rgba(0,0,0,0.4);
+            background: rgba(139,58,43,0.1);
             padding: 20px;
             border-radius: 5px;
             text-decoration: none;
-            color: var(--desert-sand);
+            color: var(--dark-earth);
             transition: 0.3s;
             border: 2px solid transparent;
         }
 
         .social-item:hover {
             border-color: var(--deep-rust);
-            color: white;
+            background: rgba(139,58,43,0.2);
             transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(139,58,43,0.3);
         }
 
         .social-item i { font-size: 2rem; margin-bottom: 10px; display: block; color: var(--deep-rust); }
@@ -116,11 +115,98 @@
             letter-spacing: 1px;
         }
 
-        .email-box:hover { background: var(--dark-earth); border: 1px solid var(--deep-rust); color: var(--deep-rust); }
+        .email-box:hover { background: var(--dark-earth); color: var(--desert-sand); }
 
-        hr { border: 0; height: 1px; background: var(--deep-rust); margin: 30px 0; opacity: 0.5; }
+        hr { border: 0; height: 1px; background: var(--deep-rust); margin: 40px 0; opacity: 0.3; }
         
         .separator { color: var(--deep-rust); font-weight: bold; margin: 0 10px; }
+
+        /* Estilos de la Galería de Comisiones */
+        .commission-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Columnas adaptables */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .commission-item {
+            background: #f9f9f9;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            overflow: hidden; /* Corta la imagen si sobresale */
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .commission-item:hover {
+            border-color: var(--deep-rust);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        /* Estilo para los recuadros de imagen inyectables */
+        .image-placeholder {
+            width: 100%;
+            height: 250px; /* Altura base para cuadrados */
+            background-color: #eee;
+            background-image: url('https://via.placeholder.com/400x400.png?text=Inyectar+Imagen+Aquí'); /* Imagen de muestra */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid #eee;
+        }
+
+        /* Variaciones de tamaño para los recuadros */
+        .rect-rectangular .image-placeholder { height: 150px; } /* Rectángulo horizontal */
+        .rect-vertical .image-placeholder { height: 400px; } /* Rectángulo vertical ancho */
+        .rect-normal .image-placeholder { height: 200px; } /* Rectángulo normal */
+
+        .commission-info {
+            padding: 20px;
+            flex-grow: 1; /* Empuja el precio hacia abajo */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .commission-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--dark-earth);
+        }
+
+        .price-tag {
+            background-color: var(--deep-rust);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        /* Recuadro Informativo Especial */
+        .info-card {
+            background-color: rgba(0, 255, 65, 0.05); /* Un toque verde alien muy sutil */
+            border: 2px solid var(--alien-neon);
+            color: var(--dark-earth);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 50px;
+            text-align: left;
+            position: relative;
+        }
+
+        .info-card i {
+            color: var(--alien-neon);
+            font-size: 1.5rem;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
     </style>
 </head>
 <body>
@@ -139,12 +225,10 @@
                 <i class="fab fa-telegram-plane"></i>
                 <strong>Telegram</strong>
             </a>
-
             <a href="https://x.com/AstrekHH" target="_blank" class="social-item">
                 <i class="fab fa-twitter"></i>
                 <strong>Twitter</strong>
             </a>
-
             <a href="https://www.facebook.com/share/18HXvoWopY/" target="_blank" class="social-item">
                 <i class="fab fa-facebook-f"></i>
                 <strong>Facebook</strong>
@@ -153,8 +237,93 @@
 
         <hr>
 
+        <h2><span class="separator">•</span> COMMISSIONS <span class="separator">•</span></h2>
+        <p>Precios base en MXN (pueden variar según complejidad)</p>
+
+        <div class="commission-gallery">
+
+            <div class="commission-item rect-rectangular">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">¿Gustas una comisión? Aquí precios:</p>
+                </div>
+            </div>
+
+            <div class="commission-item">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">HeadShot Flat color</p>
+                    <div><span class="price-tag">200 MXN</span></div>
+                </div>
+            </div>
+
+            <div class="commission-item">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">Headshot full color</p>
+                    <div><span class="price-tag">300 MXN</span></div>
+                </div>
+            </div>
+
+            <div class="commission-item rect-vertical">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">Mid Body flat color</p>
+                    <div><span class="price-tag">450 MXN</span></div>
+                </div>
+            </div>
+
+            <div class="commission-item rect-vertical">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">Mid body full color</p>
+                    <div><span class="price-tag">750 MXN</span></div>
+                </div>
+            </div>
+
+            <div class="commission-item rect-vertical">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">Full body Flat color</p>
+                    <div><span class="price-tag">500 MXN</span></div>
+                </div>
+            </div>
+
+            <div class="commission-item rect-vertical">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">Full body full color</p>
+                    <div><span class="price-tag">800 MXN</span></div>
+                </div>
+            </div>
+
+            <div class="commission-item rect-normal">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">Ref sheet básica de un lado</p>
+                    <div><span class="price-tag">300 MXN</span></div>
+                </div>
+            </div>
+
+            <div class="commission-item rect-normal">
+                <div class="image-placeholder"></div>
+                <div class="commission-info">
+                    <p class="commission-title">Ref sheet avanzada ambos lados y detalles</p>
+                    <div><span class="price-tag">600 MXN</span></div>
+                </div>
+            </div>
+
+        </div> <div class="info-card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <p style="margin: 0; line-height: 1.6;">
+                <strong>Nota Importante:</strong> Estos precios pueden variar por el diseño de personaje y complejidad, favor de cotizar. Además, ya viene incluido el NSFW que es totalmente opcional así que no pagas costo extra por que sea NSFW o SFW. ¡Ahorras más!
+            </p>
+        </div>
+
+        <hr>
+
         <h2><span class="separator">•</span> TRANSMISSION <span class="separator">•</span></h2>
-        <p>FOR COMMISSIONS, SEND YOUR REQUEST HERE:</p>
+        <p>Send your request here:</p>
         <a href="mailto:astrekhollowhorn@gmail.com" class="email-box">
             <i class="fas fa-satellite-dish"></i> astrekhollowhorn@gmail.com
         </a>
@@ -166,4 +335,5 @@
 </footer>
 
 </body>
-</html>
+    </html>
+    
