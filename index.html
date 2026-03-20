@@ -7,55 +7,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            /* Paleta Desert Cyber-Western */
-            --deep-rust: #8b3a2b; /* Rojo óxido profundo */
-            --desert-sand: #d2b48c; /* Café arena */
-            --alien-neon: #00ff41; /* Verde neón alien (para acentos) */
-            --dark-earth: #1a0f0a; /* Fondo casi negro/marrón */
-            --leather: #3e2723; /* Marrón cuero */
-            --white-sand: #fbf1e6; /* Un café arena muy claro para el fondo de texto */
+            --deep-rust: #8b3a2b; 
+            --desert-sand: #d2b48c; 
+            --alien-neon: #00ff41; 
+            --dark-earth: #1a0f0a; 
+            --leather: #3e2723; 
+            --white-sand: #fbf1e6; 
         }
 
         body {
             margin: 0;
-            background-color: var(--white-sand); /* Fondo claro y legible */
+            /* TU IMAGEN DE FONDO (Más oscura para legibilidad) */
+            background: linear-gradient(rgba(26,15,10,0.85), rgba(26,15,10,0.85)),
+                        url('https://img.freepik.com/foto-gratis/luz-manana-desierto-sonora-scottsdale-arizona_181624-48339.jpg?semt=ais_hybrid&w=740&q=80');
+            background-attachment: fixed;
+            background-size: cover;
             color: var(--dark-earth);
-            font-family: 'Courier New', Courier, monospace; /* Tipografía tipo máquina de escribir */
+            font-family: 'Courier New', Courier, monospace;
             text-align: center;
         }
 
         header {
-            height: 60vh; /* Encabezado más alto para lucir la animación */
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* Fondo de desierto Western real (con cañones) */
-            background: linear-gradient(to bottom, rgba(26,15,10,0.9), rgba(139,58,43,0.4)),
-                        url('https://images.unsplash.com/photo-1596711689815-53416a96e6d3?q=80&w=1920&auto=format&fit=crop');
+            /* TU IMAGEN DE FONDO EN EL HEADER (Más clara) */
+            background: linear-gradient(to bottom, rgba(26,15,10,0.7), rgba(139,58,43,0.3)),
+                        url('https://img.freepik.com/foto-gratis/luz-manana-desierto-sonora-scottsdale-arizona_181624-48339.jpg?semt=ais_hybrid&w=740&q=80');
             background-size: cover;
             background-position: center;
             border-bottom: 4px solid var(--deep-rust);
             position: relative;
         }
 
-        /* Animación Flotante para el Título */
         @keyframes floaty {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
 
         h1 { 
-            font-size: 5rem; /* Título gigante */
+            font-size: clamp(3rem, 10vw, 5rem); 
             margin: 0; 
-            color: var(--deep-rust); /* Color óxido intenso */
-            text-shadow: 3px 3px 0 var(--dark-earth), 0 0 20px rgba(139,58,43,0.7);
+            color: var(--white-sand);
+            text-shadow: 4px 4px 0 var(--deep-rust), 0 0 20px rgba(0,0,0,0.8);
             text-transform: uppercase;
             letter-spacing: 5px;
-            animation: floaty 4s ease-in-out infinite; /* Animación flotante superligera */
+            animation: floaty 4s ease-in-out infinite;
         }
 
-        .subtitle { font-size: 1.3rem; opacity: 0.9; margin-top: 15px; color: var(--desert-sand); font-weight: bold; letter-spacing: 1px; }
+        .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 15px; color: var(--desert-sand); font-weight: bold; letter-spacing: 1px; background: rgba(0,0,0,0.4); padding: 5px 15px; border-radius: 20px; }
 
         .container {
             max-width: 1100px;
@@ -66,11 +68,11 @@
         }
 
         .western-card {
-            background-color: white; /* Fondo blanco puro para máxima legibilidad */
+            background-color: white; 
             border: 3px solid var(--deep-rust);
             border-radius: 10px;
-            padding: 50px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            padding: 50px 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
         h2 { 
@@ -78,155 +80,112 @@
             text-transform: uppercase; 
             letter-spacing: 3px;
             display: inline-block;
-            margin-bottom: 10px; /* Reducido para acercar el texto descriptivo */
-            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-size: 2rem;
         }
 
-        /* Sección de Redes Sociales */
         .social-links {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
             margin: 40px 0;
         }
 
         .social-item {
-            background: rgba(139,58,43,0.1);
-            padding: 25px;
-            border-radius: 5px;
+            background: rgba(139,58,43,0.05);
+            padding: 20px;
+            border-radius: 8px;
             text-decoration: none;
             color: var(--dark-earth);
             transition: 0.3s;
-            border: 2px solid transparent;
+            border: 1px solid #eee;
         }
 
         .social-item:hover {
             border-color: var(--deep-rust);
-            background: rgba(139,58,43,0.2);
+            background: rgba(139,58,43,0.1);
             transform: translateY(-5px);
         }
 
-        .social-item i { font-size: 2.5rem; margin-bottom: 15px; display: block; color: var(--deep-rust); }
+        .social-item i { font-size: 2rem; margin-bottom: 10px; display: block; color: var(--deep-rust); }
 
         .email-box {
             background: var(--deep-rust);
             color: white;
-            padding: 18px 35px;
+            padding: 18px 30px;
             border-radius: 5px;
             display: inline-block;
             margin-top: 25px;
             font-weight: bold;
             text-decoration: none;
             text-transform: uppercase;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 1rem;
         }
 
-        .email-box:hover { background: var(--dark-earth); color: var(--desert-sand); }
-
-        hr { border: 0; height: 1px; background: var(--deep-rust); margin: 50px 0; opacity: 0.3; }
-        
-        .separator { color: var(--deep-rust); font-weight: bold; margin: 0 10px; }
-
-        /* Estilos de la Galería de Comisiones (GRID ORDENADITO) */
         .commission-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas adaptables y centradas */
-            gap: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
             margin-top: 50px;
-            justify-items: center; /* Centra los elementos en el grid */
+            justify-items: center;
         }
 
         .commission-item {
-            background: #fdfdfd;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            overflow: hidden; /* Corta la imagen si sobresale */
+            background: #fff;
+            border: 2px solid #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
             transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            width: 100%; /* Ocupa el ancho completo de su columna */
-            max-width: 350px; /* Limita el ancho máximo para que se vean bien */
+            width: 100%;
         }
 
         .commission-item:hover {
             border-color: var(--deep-rust);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
             transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Estilo para los recuadros de imagen inyectables */
         .image-placeholder {
             width: 100%;
-            height: 300px; /* Altura base para cuadrados */
-            background-color: #f0f0f0;
+            height: 250px;
+            background-color: #f8f8f8;
             background-size: cover;
             background-position: center;
-            border-bottom: 2px solid #eee;
             position: relative;
         }
         
-        /* Texto placeholder dentro de la imagen */
         .image-placeholder::after {
-            content: 'Inyectar Imagen';
-            position: absolute;
-            top: 50%;
-            left: 50%;
+            content: 'Click para inyectar';
+            position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            color: #ccc;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+            color: #ddd; font-size: 0.8rem;
         }
 
-        /* Variaciones de tamaño para los recuadros */
-        .rect-vertical .image-placeholder { height: 450px; } /* Rectángulo vertical ancho */
-        .rect-normal .image-placeholder { height: 250px; } /* Rectángulo normal */
+        .rect-vertical .image-placeholder { height: 400px; }
+        .rect-normal .image-placeholder { height: 220px; }
 
-        .commission-info {
-            padding: 25px;
-            flex-grow: 1; /* Empuja el precio hacia abajo */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        .commission-info { padding: 20px; text-align: center; }
 
-        .commission-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: var(--dark-earth);
-        }
+        .commission-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; height: 3rem; display: flex; align-items: center; justify-content: center; }
 
         .price-tag {
             background-color: var(--deep-rust);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 8px 15px;
+            border-radius: 4px;
             font-weight: bold;
-            display: inline-block;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
         }
 
-        /* Recuadro Informativo Especial */
         .info-card {
-            background-color: rgba(139, 58, 43, 0.05); /* Un toque óxido muy sutil */
-            border: 2px solid var(--deep-rust);
-            color: var(--dark-earth);
-            padding: 35px;
+            background: #fff9f5;
+            border: 2px dashed var(--deep-rust);
+            padding: 25px;
             border-radius: 10px;
-            margin-top: 60px;
+            margin-top: 50px;
             text-align: left;
-            position: relative;
         }
 
-        .info-card i {
-            color: var(--deep-rust);
-            font-size: 1.8rem;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
+        footer { padding: 40px; color: var(--white-sand); opacity: 0.7; font-size: 0.9rem; }
 
     </style>
 </head>
@@ -234,120 +193,50 @@
 
 <header>
     <h1>Astrek<br>Hollow Horn</h1>
-    <p class="subtitle">DESERT CYBER-WESTERN ARTIST // DIGITAL ILLUSTRATION</p>
+    <p class="subtitle">DESERT CYBER-WESTERN ARTIST</p>
 </header>
 
 <div class="container">
     <div class="western-card">
-        <h2><span class="separator">•</span> WANTED ON <span class="separator">•</span></h2>
-        
+        <h2>• WANTED ON •</h2>
         <div class="social-links">
-            <a href="https://t.me/AstrekHollowHorn" target="_blank" class="social-item">
-                <i class="fab fa-telegram-plane"></i>
-                <strong>Telegram</strong>
-            </a>
-            <a href="https://x.com/AstrekHH" target="_blank" class="social-item">
-                <i class="fab fa-twitter"></i>
-                <strong>Twitter</strong>
-            </a>
-            <a href="https://www.facebook.com/share/18HXvoWopY/" target="_blank" class="social-item">
-                <i class="fab fa-facebook-f"></i>
-                <strong>Facebook</strong>
-            </a>
+            <a href="https://t.me/AstrekHollowHorn" target="_blank" class="social-item"><i class="fab fa-telegram-plane"></i><strong>Telegram</strong></a>
+            <a href="https://x.com/AstrekHH" target="_blank" class="social-item"><i class="fab fa-twitter"></i><strong>Twitter</strong></a>
+            <a href="https://www.facebook.com/share/18HXvoWopY/" target="_blank" class="social-item"><i class="fab fa-facebook-f"></i><strong>Facebook</strong></a>
         </div>
 
-        <hr>
+        <hr style="border:0; height:1px; background:#eee; margin:40px 0;">
 
-        <h2><span class="separator">•</span> COMMISSIONS <span class="separator">•</span></h2>
-        <p style="font-size: 1.2rem; color: var(--leather); margin-top: 10px; font-weight: bold;">¿Gustas una comisión? Aquí precios base en MXN:</p>
-        <p style="opacity: 0.8; margin-top: -10px;">(pueden variar según complejidad)</p>
+        <h2>• COMMISSIONS •</h2>
+        <p style="font-weight: bold; color: var(--deep-rust);">¿Gustas una comisión? Precios base en MXN:</p>
 
         <div class="commission-gallery">
-
-            <div class="commission-item">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">HeadShot Flat color</p>
-                    <div><span class="price-tag">200 MXN</span></div>
-                </div>
-            </div>
-
-            <div class="commission-item">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">Headshot full color</p>
-                    <div><span class="price-tag">300 MXN</span></div>
-                </div>
-            </div>
-
-            <div class="commission-item rect-vertical">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">Mid Body flat color</p>
-                    <div><span class="price-tag">450 MXN</span></div>
-                </div>
-            </div>
-
-            <div class="commission-item rect-vertical">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">Mid body full color</p>
-                    <div><span class="price-tag">750 MXN</span></div>
-                </div>
-            </div>
-
-            <div class="commission-item rect-vertical">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">Full body Flat color</p>
-                    <div><span class="price-tag">500 MXN</span></div>
-                </div>
-            </div>
-
-            <div class="commission-item rect-vertical">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">Full body full color</p>
-                    <div><span class="price-tag">800 MXN</span></div>
-                </div>
-            </div>
-
-            <div class="commission-item rect-normal">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">Ref sheet básica de un lado</p>
-                    <div><span class="price-tag">300 MXN</span></div>
-                </div>
-            </div>
-
-            <div class="commission-item rect-normal">
-                <div class="image-placeholder"></div>
-                <div class="commission-info">
-                    <p class="commission-title">Ref sheet avanzada ambos lados y detalles</p>
-                    <div><span class="price-tag">600 MXN</span></div>
-                </div>
-            </div>
-
-        </div> <div class="info-card">
-            <i class="fas fa-hand-holding-usd"></i>
-            <p style="margin: 0; line-height: 1.8; font-size: 1.1rem;">
-                <strong>Nota Importante:</strong> Estos precios pueden variar por el diseño de personaje y complejidad, favor de cotizar. Además, ya viene incluido el NSFW que es totalmente opcional así que no pagas costo extra por que sea NSFW o SFW. ¡Ahorras más!
-            </p>
+            <div class="commission-item"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">HeadShot Flat color</p><span class="price-tag">200 MXN</span></div></div>
+            <div class="commission-item"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">Headshot full color</p><span class="price-tag">300 MXN</span></div></div>
+            <div class="commission-item rect-vertical"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">Mid Body flat color</p><span class="price-tag">450 MXN</span></div></div>
+            <div class="commission-item rect-vertical"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">Mid body full color</p><span class="price-tag">750 MXN</span></div></div>
+            <div class="commission-item rect-vertical"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">Full body Flat color</p><span class="price-tag">500 MXN</span></div></div>
+            <div class="commission-item rect-vertical"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">Full body full color</p><span class="price-tag">800 MXN</span></div></div>
+            <div class="commission-item rect-normal"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">Ref sheet básica de un lado</p><span class="price-tag">300 MXN</span></div></div>
+            <div class="commission-item rect-normal"><div class="image-placeholder"></div><div class="commission-info"><p class="commission-title">Ref sheet avanzada ambos lados y detalles</p><span class="price-tag">600 MXN</span></div></div>
         </div>
 
-        <hr>
+        <div class="info-card">
+            <p><strong>Nota Importante:</strong> Estos precios pueden variar por el diseño de personaje y complejidad, favor de cotizar. Además, ya viene incluido el NSFW que es totalmente opcional así que no pagas costo extra por que sea NSFW o SFW. ¡Ahorras más!</p>
+        </div>
 
-        <h2><span class="separator">•</span> TRANSMISSION <span class="separator">•</span></h2>
-        <p>Send your request here:</p>
-        <a href="mailto:astrekhollowhorn@gmail.com" class="email-box">
-            <i class="fas fa-satellite-dish"></i> astrekhollowhorn@gmail.com
-        </a>
+        <hr style="border:0; height:1px; background:#eee; margin:40px 0;">
+
+        <h2>• TRANSMISSION •</h2>
+        <p>Escríbeme para cotizar:</p>
+        <a href="mailto:astrekhollowhorn@gmail.com" class="email-box"><i class="fas fa-satellite-dish"></i> astrekhollowhorn@gmail.com</a>
     </div>
 </div>
 
-<footer style="padding-bottom: 50px; opacity: 0.5; font-size: 0.9rem;">
+<footer>
     <p>© 2026 Astrek Hollow Horn // Desert Outpost // Signal established.</p>
 </footer>
 
 </body>
-</html>
+            </html>
+            
