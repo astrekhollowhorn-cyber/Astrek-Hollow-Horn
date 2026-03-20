@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --deep-rust: #8b3a2b; 
-            --desert-sand: #d2b48c; 
-            --alien-neon: #00ff41; 
-            --dark-earth: #1a0f0a; 
-            --leather: #3e2723; 
+            --deep-rust: #8b3a2b; /* Rojo óxido profundo */
+            --desert-sand: #d2b48c; /* Café arena */
+            --dark-earth: #1a0f0a; /* Fondo casi negro/marrón */
+            --leather: #3e2723; /* Marrón cuero */
         }
 
         body {
             margin: 0;
             background-color: var(--dark-earth);
+            /* Textura de sutil arena de fondo */
             background-image: url('https://www.transparenttextures.com/patterns/dark-dotted-2.png');
             color: var(--desert-sand);
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Courier New', Courier, monospace; /* Tipografía tipo máquina de escribir */
             text-align: center;
         }
 
@@ -29,8 +29,9 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, rgba(26,15,10,0.8), rgba(139,58,43,0.5)),
-                        url('https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?q=80&w=1920&auto=format&fit=crop');
+            /* Fondo de desierto Western real (con cañones) */
+            background: linear-gradient(to bottom, rgba(26,15,10,0.8), rgba(139,58,43,0.3)),
+                        url('https://images.unsplash.com/photo-1596711689815-53416a96e6d3?q=80&w=1920&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             border-bottom: 4px solid var(--deep-rust);
@@ -40,20 +41,13 @@
         h1 { 
             font-size: 3rem; 
             margin: 0; 
-            color: var(--deep-rust);
-            text-shadow: 2px 2px 0 var(--dark-earth);
+            color: var(--desert-sand);
+            text-shadow: 2px 2px 0 var(--dark-earth), 0 0 15px rgba(210,180,140,0.5);
             text-transform: uppercase;
             letter-spacing: 3px;
         }
-        
-        h1::before, h1::after {
-            content: '\f2e3'; 
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            font-size: 2rem;
-            margin: 0 10px;
-            color: var(--desert-sand);
-        }
+
+        .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 10px; color: var(--deep-rust); font-weight: bold; letter-spacing: 1px; }
 
         .container {
             max-width: 900px;
@@ -65,13 +59,23 @@
 
         .western-card {
             background-color: var(--leather);
-            background-image: url('https://www.transparenttextures.com/patterns/leather.png');
+            background-image: url('https://www.transparenttextures.com/patterns/leather.png'); /* Textura de cuero */
             border: 3px solid var(--deep-rust);
             border-radius: 10px;
             padding: 40px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
+        h2 { 
+            color: var(--deep-rust); 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+        }
+
+        /* Sección de Redes Sociales */
         .social-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -90,10 +94,10 @@
         }
 
         .social-item:hover {
-            border-color: var(--alien-neon);
+            border-color: var(--deep-rust);
             color: white;
             transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            box-shadow: 0 0 15px rgba(139,58,43,0.3);
         }
 
         .social-item i { font-size: 2rem; margin-bottom: 10px; display: block; color: var(--deep-rust); }
@@ -108,43 +112,49 @@
             font-weight: bold;
             text-decoration: none;
             text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
 
-        .email-box:hover { background: var(--dark-earth); border: 1px solid var(--deep-rust); }
+        .email-box:hover { background: var(--dark-earth); border: 1px solid var(--deep-rust); color: var(--deep-rust); }
 
-        .alien-glyph { color: var(--alien-neon); font-size: 1.2rem; margin: 0 5px; }
+        hr { border: 0; height: 1px; background: var(--deep-rust); margin: 30px 0; opacity: 0.5; }
+        
+        .separator { color: var(--deep-rust); font-weight: bold; margin: 0 10px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Astrek<br>Hollow Horn</h1>
-    <p style="letter-spacing: 2px;">DESERT CYBER-WESTERN ARTIST</p>
+    <p class="subtitle">DESERT CYBER-WESTERN ARTIST // DIGITAL ILLUSTRATION</p>
 </header>
 
 <div class="container">
     <div class="western-card">
-        <h2><span class="alien-glyph">�6�9</span> WANTED ON <span class="alien-glyph">�6�9</span></h2>
+        <h2><span class="separator">•</span> WANTED ON <span class="separator">•</span></h2>
         
         <div class="social-links">
             <a href="https://t.me/AstrekHollowHorn" target="_blank" class="social-item">
                 <i class="fab fa-telegram-plane"></i>
                 <strong>Telegram</strong>
             </a>
+
             <a href="https://x.com/AstrekHH" target="_blank" class="social-item">
                 <i class="fab fa-twitter"></i>
                 <strong>Twitter</strong>
             </a>
+
             <a href="https://www.facebook.com/share/18HXvoWopY/" target="_blank" class="social-item">
-                <i class="fas fa-skull"></i>
+                <i class="fab fa-facebook-f"></i>
                 <strong>Facebook</strong>
             </a>
         </div>
 
-        <hr style="border: 0; height: 1px; background: var(--deep-rust); margin: 30px 0;">
+        <hr>
 
-        <h2><span class="alien-glyph">�6�8</span> TRANSMISSION <span class="alien-glyph">�6�8</span></h2>
-        <p>Inquire for commissions here:</p>
+        <h2><span class="separator">•</span> TRANSMISSION <span class="separator">•</span></h2>
+        <p>FOR COMMISSIONS, SEND YOUR REQUEST HERE:</p>
         <a href="mailto:astrekhollowhorn@gmail.com" class="email-box">
             <i class="fas fa-satellite-dish"></i> astrekhollowhorn@gmail.com
         </a>
@@ -152,7 +162,7 @@
 </div>
 
 <footer style="padding-bottom: 40px; opacity: 0.5; font-size: 0.8rem;">
-    <p>�0�8 2026 Astrek Hollow Horn // Signal established.</p>
+    <p>© 2026 Astrek Hollow Horn // Desert Outpost // Signal stable.</p>
 </footer>
 
 </body>
